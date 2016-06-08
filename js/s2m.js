@@ -230,7 +230,7 @@ function geolocationWatchSuccess_helper(lat, lng) {
   locationText += '. Diff=' + (currentTime - appStartTime) + ' current:' + currentTime +' , start: ' + appStartTime;
   
   // Ignore bogus callbacks during 30 seconds of startup.
-  if ((currentTime - appStartTime) < 30000) {
+  if ((currentTime - appStartTime) < 10000) {
     return;
   }
 
@@ -245,6 +245,7 @@ function geolocationWatchSuccess_helper(lat, lng) {
       showStores();
     });
   }
+  
   //alert(locationText);
   //scheduleNotification(1, locationText);
   gladiatorClosestStoreCatalog(function(storeCatalog) {
